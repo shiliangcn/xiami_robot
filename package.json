@@ -1,0 +1,28 @@
+{
+  "name": "xiami_robot",
+  "version": "1.0.0",
+  "description": "xiami robot by node",
+  "main": "catch.js",
+  "scripts": {
+    "test": "node catch.js 1 1000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shiliangcn/xiami_robot"
+  },
+  "keywords": [
+    "xiami"
+  ],
+  "author": "shiliang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shiliangcn/xiami_robot/issues"
+  },
+  "homepage": "https://github.com/shiliangcn/xiami_robot",
+  "dependencies": {
+    "jsdom": "^3.1.2",
+    "mysql": "^2.10.2",
+    "request": "^2.67.0",
+    "validator": "^4.5.1"
+  }
+}
