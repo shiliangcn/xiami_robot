@@ -38,6 +38,10 @@ module.exports = function(sid,callback_next){
                     song_info.title = jquery(window)("meta[property='og:title']").attr('content');
                     song_info.artist = jquery(window)("meta[property='og:music:artist']").attr('content');
                     song_info.album = jquery(window)("meta[property='og:music:album']").attr('content');
+                    if(jquery(window)("#pub_notice").html() != null){
+                        if(jquery(window)("#pub_notice").html().match('所属专辑未发布'))
+                            song_info.unpublished = 1;
+                    };
                     var album_h = jquery(window)(".CDcover185").attr('href');
                     var album_h_s = album_h.split('/')
                     song_info.album_id = album_h_s[album_h_s.length - 1]
