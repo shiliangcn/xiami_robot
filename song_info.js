@@ -36,7 +36,10 @@ module.exports = function(sid,callback_next){
                 function (errors, window) {
                     song_info.id = sid;
                     song_info.title = jquery(window)("meta[property='og:title']").attr('content');
-                    song_info.artist = jquery(window)("meta[property='og:music:artist']").attr('content');
+                    if(jquery(window)('a[href*="http://www.xiami.com/search/find?artist"]').attr('title').length)
+                        song_info.artist = jquery(window)('a[href*="http://www.xiami.com/search/find?artist"]').attr('title');
+                    else
+                        song_info.artist = jquery(window)("meta[property='og:music:artist']").attr('content');
                     song_info.album = jquery(window)("meta[property='og:music:album']").attr('content');
                     if(jquery(window)("#pub_notice").html() != null){
                         if(jquery(window)("#pub_notice").html().match('所属专辑未发布'))
